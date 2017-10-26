@@ -27,7 +27,7 @@ func templateHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	//call handler function
 	//http.Handle("/", http.FileServer(http.Dir("./static")))
-	http.HandleFunc("/", handler)
+	http.HandleFunc("/", templateHandler)
 
 	http.HandleFunc("/guess", templateHandler)
 	http.ListenAndServe(":8080", nil)
